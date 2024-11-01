@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--color-gris);
+    /* font-family: 'titulos'; */
+    font-family: "nunito";
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/* Variables de los colores*/
+:root {
+    --color-verdeClaro: #7f9992;
+    --color-verdeOscuro: #3b665b;
+    --color-gris: #ebebeb;
+}
+
+/* Fuente del documento */
+@font-face {
+    font-family: "nunito";
+    src: url(../fonts/nunito.ttf);
+    font-weight: 100;
+
+}
+
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ebebeb;
+    padding: 1rem;
+}
+
+/* Logo */
+.header__imagen {
+    width: 10rem;
+    height: auto;
+}
+
+/* Links de navegación */
+.header__lista {
+    display: flex;
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.header__elementoLista {
+    margin: 0 1rem;
+    color: black;
+    text-transform: uppercase;
+}
+
+.header__link {
+    color: black;
+    text-decoration: none;
+}
+
+.header__link:hover {
+    color: var(--color-verdeOscuro);
+}
+
+/* Imagen de fondo de Inicio y contenedor*/
+.yogaImage {
+    width: 100%;
+    height: 80vh;
+    background-image: url('yogaInicio.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.yogaImage__contenedorTexto {
+    background-color: rgba(59, 102, 91, 0.5);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yogaImage__texto {
+    padding: 1rem;
+    color: white;
+}
+
+.boton__inicio {
+    background-color: #3b665b;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+}
+
+/* Sección quienes somos */
+.team__imagen {
+    width: 20rem;
+    height: auto;
+    border-radius: 5rem;
+}
+
+.team {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    align-items: center;
+}
+
+.team__card {
+    padding: 3rem;
+}
+
+
+.team__titulo,
+.team__texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+/* Seccion login del panel de control */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    /* background-color: rgba(235, 235, 235, 0.2); */
+    background-color: rgba(246, 246, 246, 0.4);
+    width: 20rem;
+}
+
+.login {
+    height: 80vh;
+    background-image: url('loginImg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonSesion {
+    margin-top: 1rem;
+}
+
+
+/* Sección de servicios de yoga */
+
+.serviciosCards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-gris);
+    gap: 3rem;
+}
+
+.serviciosCards__imagenes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    border-radius: 4rem;
+    margin: 1rem;
+}
+
+.imagenCardYoga {
+    max-width: 20rem;
+    border-radius: 5rem;
+}
+
+.servicios__contenedorYoga {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(59, 102, 91, 0.5);
+    border-radius: 5rem;
+    padding: 1rem;
+    width: 20%;
+}
+
+/* Servicios para editar */
+.serviciosCrud{
+    text-align: center;
+    /* background-color: var(--color-verdeClaro); */
+    padding: 3rem;
+}
+
+.botones a{
+    color: #3b665b;
+    font-size: 2rem;
+}
+
+.nueva{
+    font-size: 1.5rem;
+}
+
+
+/* Servicio nuevo */
+.nuevoServicio, .editarSeccion {
+background-color: var(--color-verdeClaro);
+margin: 10rem;
+}
+.formularioNuevo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.serviciosCrud div{
+    background-color: var(--color-verdeClaro);
+    border-radius: 1rem;
+    margin: 3rem;
+    padding: 1rem;
+
+}
+.serviciosCrud {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.nueva {
+    background-color: var(--color-verdeClaro);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+/* Sección Borrar Servicio */
+.borrarServicio{
+    text-align: center;
+    align-content: center;
+    height: 80vh;
+}
+
+
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ebebeb;
+    color: black;
+    padding: 1rem;
+}
+
+.footer__rrss {
+    display: flex;
+    align-items: center;
+
+}
+
+.footer__red {
+    margin: 0 1rem;
+}
+
+
+/* MEDIA QUERY PARA TABLETS  */
+@media only screen and (min-width : 600px) and (max-width: 768px) {
+    html {
+        font-size: 2rem;
+    }
+    /* Sección Inicio Tablets */
+    .header {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+    .header__lista {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .yogaImage__contenedorTexto,
+    footer {
+        text-align: center;
+    }
+
+      /* Sección Quienes somos Tablets */
+      .team {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Sección Servicios Tablets */
+    .serviciosCards {
+        display: flex;
+        flex-direction: column;
+    }
+    .servicios__contenedorYoga {
+        width: 80%;
+    }
+
+}
+
+
+/* MEDIA QUERY PARA MÓVILES */
+@media only screen and (min-width : 320px) and (max-width: 600px) {
+    html {
+        font-size: 1rem;
+    }
+
+    /* Sección Inicio Móviles */
+    .header {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .header__lista {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .yogaImage__contenedorTexto,
+    footer {
+        text-align: center;
+    }
+
+
+
+    /* Sección Quienes somos Móviles */
+    .team {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* Sección servicios para Móviles */
+    .serviciosCards {
+        display: flex;
+        flex-direction: column;
+    }
+    .servicios__contenedorYoga {
+        width: 80%;
+    }
+
+    /* Seccion nuevo servicio para móviles */
+    .nuevoServicio {
+        margin: 2rem;
+    }
+
+    .serviciosCrud {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
