@@ -13,7 +13,8 @@ function PanelDeControl() {
 
     useEffect(() => {
 
-        fetch('http://localhost:3000/servicios').then(res => res.json())
+        fetch('/servicios').then(res => {console.log(res);return res.json()})
+
             .then(datos => {
                 setServicios(datos)
             })
@@ -49,11 +50,11 @@ function PanelDeControl() {
 
             })}
 
-            <p className='nueva'>Añadir nueva clase: 
+            <div className='nueva'>Añadir nueva clase: 
                 <div className='botones'>
                     <Link to={'/nuevoServicio'}><FaRegPlusSquare /></Link>
                 </div>
-            </p>
+            </div>
 
 
 
@@ -66,3 +67,4 @@ function PanelDeControl() {
 
 
 export default PanelDeControl 
+
