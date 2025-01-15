@@ -6,7 +6,6 @@ import { FaTrashAlt } from "react-icons/fa";
 import { MdModeEditOutline } from "react-icons/md";
 
 const API_URL = import.meta.env.VITE_API;
-console.log('API_URL', API_URL)
 
 function PanelDeControl() {
 
@@ -67,5 +66,6 @@ function PanelDeControl() {
 
 
 export default PanelDeControl 
+
 
 
