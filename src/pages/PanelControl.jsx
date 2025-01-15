@@ -13,8 +13,7 @@ function PanelDeControl() {
 
     useEffect(() => {
 
-        fetch('/servicios').then(res => {console.log(res);return res.json()})
-
+        fetch('http://localhost:3000/servicios').then(res => res.json())
             .then(datos => {
                 setServicios(datos)
             })
@@ -67,4 +66,5 @@ function PanelDeControl() {
 
 
 export default PanelDeControl 
+
 
