@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaTrashAlt } from "react-icons/fa";
 import { MdModeEditOutline } from "react-icons/md";
 
-
+const API_URL = import.meta.env.VITE_API;
 
 function PanelDeControl() {
 
@@ -13,7 +13,7 @@ function PanelDeControl() {
 
     useEffect(() => {
 
-        fetch('http://localhost:3000/servicios').then(res => res.json())
+        fetch(`${API_URL}/servicios`).then(res => res.json())
             .then(datos => {
                 setServicios(datos)
             })
