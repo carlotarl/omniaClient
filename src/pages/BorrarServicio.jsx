@@ -1,11 +1,15 @@
 import React from 'react'
 import { useParams,useNavigate } from 'react-router-dom'
 
+const API_URL = import.meta.env.VITE_API;
+
 function BorrarServicio() {
 
     const navegar = useNavigate();
 
     const id = useParams().id;
+
+    
 
     function handleNo() {
         navegar('/')
@@ -16,7 +20,7 @@ function BorrarServicio() {
             method: 'DELETE'
         }
 
-        fetch('http://localhost:3000/servicio?id='+id,opciones).then(res=> res.json()).then( data => {
+        fetch(API_URL+'/servicio?id='+id,opciones).then(res=> res.json()).then( data => {
 
         if (data.status == 'okay') {
             alert('Borrado satisfactoriamente');
