@@ -19,7 +19,7 @@ function Login() {
 
   function enviarForm(e) {
     e.preventDefault();
-    axios.get(API_URL+'/admin?nombre='+datos.nombre+'&contrasena='+datos.contrasena).then(response=>{
+    axios.get(API_URL+'admin?nombre='+datos.nombre+'&contrasena='+datos.contrasena).then(response=>{
       if (response.data.length > 0) {
         login(response.data[0])
         navegador('/servicios')
