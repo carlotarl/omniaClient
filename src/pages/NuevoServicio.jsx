@@ -1,39 +1,35 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+
+const API_URL = import.meta.env.VITE_API;
+
 function NuevoServicio() {
-
     const [nuevoServicio,setNuevoServicio] = useState( {nombre:'',descripcion:'',precio:0} );
-
     const navigate = useNavigate();
-
     function cambiarCampo(e) {
-
         let nombreCampo = e.target.name;
-
         let valorCampo = e.target.value;
-
         setNuevoServicio({...nuevoServicio, [nombreCampo]: valorCampo})
-        
     }
 
     function enviarFormulario(e) {
         
         e.preventDefault();
-        console.log(nuevaGuia);
         let opciones = {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(nuevaGuia)
+            body: JSON.stringify(nuevoServicio)
         };
-        console.log(opciones);
-        fetch('http://localhost:3000/servicios',opciones).then(res => res.json()).then(data=>{
-            if (data.mensaje == 'Ok') {
-                navigate('/');
-            }
-        })
+        fetch(`${API_URL}/servicios`,opciones)
+            .then(res => res.json())
+            .then(data=>{
+                if (data.mensaje == 'Ok') {
+                    navigate('/');
+                }
+            })
 
     }
 
