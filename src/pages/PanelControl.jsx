@@ -67,4 +67,3 @@ function PanelDeControl() {
 
 export default PanelDeControl 
 
-
