@@ -16,15 +16,18 @@ function BorrarServicio() {
             method: 'DELETE'
         }
 
-        fetch(API_URL+'servicios?id='+id,opciones).then(res=> res.json()).then( data => {
-        if (data.status == 'okay') {
-            alert('Borrado satisfactoriamente');
-            navegar('/');
-        } else if(data.status == 'El campo no existe'){
-            alert('El campo que intenta eliminar no existe, prueve con otro');
-            navegar('/servicios')
-            }
-        })
+        fetch(API_URL+'servicios?id='+id,opciones)
+        .then(res=> res.json())
+        .then( data => {
+            console.log('data', data);
+            if (data.status == 'okay') {
+                alert('Borrado satisfactoriamente');
+                navegar('/');
+            } else if(data.status == 'El campo no existe'){
+                alert('El campo que intenta eliminar no existe, prueve con otro');
+                navegar('/servicios')
+                }
+            })
     }
 
   return (
