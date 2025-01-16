@@ -20,7 +20,7 @@ function BorrarServicio() {
         .then(res=> res.json())
         .then( data => {
             console.log('data', data);
-            if (data.status == 'okay') {
+            if (data.mensaje == 'Ok') {
                 alert('Borrado satisfactoriamente');
                 navegar('/');
             } else if(data.status == 'El campo no existe'){
