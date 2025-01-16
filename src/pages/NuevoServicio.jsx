@@ -15,16 +15,16 @@ function NuevoServicio() {
 
     function enviarFormulario(e) {
         e.preventDefault();
-        console.log(nuevaGuia);
+        console.log(nuevoServicio);
         let opciones = {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(nuevaGuia)
+            body: JSON.stringify(nuevoServicio)
         };
         console.log(opciones);
-        fetch(API_URL+'/servicios',opciones).then(res => res.json()).then(data=>{
+        fetch(API_URL+'servicios',opciones).then(res => res.json()).then(data=>{
             if (data.mensaje == 'Ok') {
                 navigate('/');
             }

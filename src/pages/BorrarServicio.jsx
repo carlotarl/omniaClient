@@ -16,7 +16,7 @@ function BorrarServicio() {
             method: 'DELETE'
         }
 
-        fetch(API_URL+'/servicio?id='+id,opciones).then(res=> res.json()).then( data => {
+        fetch(API_URL+'servicio?id='+id,opciones).then(res=> res.json()).then( data => {
         if (data.status == 'okay') {
             alert('Borrado satisfactoriamente');
             navegar('/');
