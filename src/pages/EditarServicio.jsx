@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API;
+
 function EditarServicio() {
   const [editarServicio, setEditarServicio] = useState({
     nombre: '',
@@ -13,7 +15,7 @@ function EditarServicio() {
   const navegar = useNavigate();
 
   useEffect(() => {
-    fetch('/servicio/id?id=' + id)
+    fetch(API_URL+'/servicio/id?id=' + id)
       .then(res => res.json())
       .then(data => {
         setEditarServicio(data);
@@ -36,7 +38,7 @@ function EditarServicio() {
       body: JSON.stringify(editarServicio)
     };
 
-    fetch('/servicio/id?id=' + id, opciones)
+    fetch(API_URL+'/servicio/id?id=' + id, opciones)
       .then(res => res.json())
       .then(data => {
         if (data.mensaje === 'Ok') {
@@ -93,6 +95,5 @@ function EditarServicio() {
 }
 
 export default EditarServicio;
-
 
 

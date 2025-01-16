@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useUser } from '../context/UsuarioContext';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +18,7 @@ function Login() {
 
   function enviarForm(e) {
     e.preventDefault();
-    axios.get(API_URL+'admin?nombre='+datos.nombre+'&contrasena='+datos.contrasena).then(response=>{
+    axios.get(API_URL+'/admin?nombre='+datos.nombre+'&contrasena='+datos.contrasena).then(response=>{
       if (response.data.length > 0) {
         login(response.data[0])
         navegador('/servicios')
@@ -46,6 +45,5 @@ function Login() {
 export default Login
 
 
- 
 
- 
+

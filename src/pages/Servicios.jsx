@@ -2,23 +2,18 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function Servicios() {
-
-  let link = import.meta.env.VITE_API_SERVICIOS;
-
+  const API_URL = import.meta.env.VITE_API;
   const [serviciosYoga, setServiciosYoga] = useState([])
 
   useEffect(() => {
-
-    axios.get(link).then(response => {
+    axios.get(`${API_URL}/servicios`).then(response => {
+      console.log('response', response.data)
       setServiciosYoga(response.data)
     })
-
   }, [])
 
   return (
-
     <section className='serviciosCards'>
-
       {serviciosYoga.map(servicio => {
         return <article className='servicios__contenedorYoga' key={servicio.id}>
 
@@ -26,12 +21,9 @@ function Servicios() {
           <p>{servicio.descripcion}</p>
           <p>Duración: {servicio.duracion}</p>
           <p>Precio: {servicio.precio} €</p>
-          <img src={"http://localhost:3000/"+servicio.foto} alt="imagen yoga" className='serviciosCards__imagenes '/>
-          
-
+          <img src={API_URL+servicio.foto} alt="imagen yoga" className='serviciosCards__imagenes '/>
         </article>
       })}
-
     </section>
 
 
@@ -41,4 +33,3 @@ function Servicios() {
 }
 
 export default Servicios
-
