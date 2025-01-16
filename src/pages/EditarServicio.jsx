@@ -15,7 +15,7 @@ function EditarServicio() {
   const navegar = useNavigate();
 
   useEffect(() => {
-    fetch(API_URL+'servicio/id?id=' + id)
+    fetch(API_URL+'servicios/id?id=' + id)
       .then(res => res.json())
       .then(data => {
         setEditarServicio(data);
@@ -38,7 +38,7 @@ function EditarServicio() {
       body: JSON.stringify(editarServicio)
     };
 
-    fetch(API_URL+'servicio/id?id=' + id, opciones)
+    fetch(API_URL+'servicios/id?id=' + id, opciones)
       .then(res => res.json())
       .then(data => {
         if (data.mensaje === 'Ok') {
