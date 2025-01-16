@@ -42,7 +42,7 @@ function EditarServicio() {
       .then(res => res.json())
       .then(data => {
         if (data.mensaje === 'Ok') {
-          navegar('/');
+          navegar('/servicios');
         }
       })
       .catch(err => console.error("Error al editar el servicio:", err));

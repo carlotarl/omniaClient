@@ -21,11 +21,11 @@ function BorrarServicio() {
         .then( data => {
             console.log('data', data);
             if (data.mensaje == 'Ok') {
-                alert('Borrado satisfactoriamente');
-                navegar('/');
+                console.log('Borrado satisfactoriamente');
+                navegar('/servicios');
             } else if(data.status == 'El campo no existe'){
-                alert('El campo que intenta eliminar no existe, prueve con otro');
-                navegar('/servicios')
+                console.log('El campo que intenta eliminar no existe, prueve con otro');
+                navegar('/panel')
                 }
             })
     }
