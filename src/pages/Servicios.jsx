@@ -6,7 +6,7 @@ function Servicios() {
   const [serviciosYoga, setServiciosYoga] = useState([])
 
   useEffect(() => {
-    axios.get(`${API_URL}/servicios`).then(response => {
+    axios.get(`${API_URL}servicios`).then(response => {
       console.log('response', response.data)
       setServiciosYoga(response.data)
     })

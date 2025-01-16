@@ -1,8 +1,6 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { FaRegPlusSquare } from "react-icons/fa";
+import React, { useEffect, useState } from 'react'
+import { FaRegPlusSquare, FaTrashAlt } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { FaTrashAlt } from "react-icons/fa";
 import { MdModeEditOutline } from "react-icons/md";
 
 const API_URL = import.meta.env.VITE_API;
@@ -13,8 +11,7 @@ function PanelDeControl() {
     const [servicios, setServicios] = useState([]);
 
     useEffect(() => {
-
-        fetch(`${API_URL}/servicios`).then(res => res.json())
+        fetch(`${API_URL}servicios`).then(res => res.json())
             .then(datos => {
                 setServicios(datos)
             })
@@ -39,7 +36,7 @@ function PanelDeControl() {
 
                     <div className='botones'>
                         <Link to={'/borrarServicio/' + servicio.id}><FaTrashAlt /></Link>
-                        <Link to={'/EditarServicio/' + servicio.id}><MdModeEditOutline/></Link>  
+                        <Link to={'/EditarServicio/' + servicio.id}><MdModeEditOutline/></Link>
                     </div>
 
 
@@ -50,7 +47,7 @@ function PanelDeControl() {
 
             })}
 
-            <div className='nueva'>Añadir nueva clase: 
+            <div className='nueva'>Añadir nueva clase:
                 <div className='botones'>
                     <Link to={'/nuevoServicio'}><FaRegPlusSquare /></Link>
                 </div>
@@ -66,6 +63,6 @@ function PanelDeControl() {
 
 
 
-export default PanelDeControl 
+export default PanelDeControl
 
 
